@@ -1,0 +1,172 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhdrvbrxd87pt"]
+
+[ext_resource type="Script" path="res://scripts/riddles.gd" id="1_74cfk"]
+[ext_resource type="StyleBox" uid="uid://c1ufanobdy80" path="res://themes/gameBg.tres" id="2_cxphp"]
+[ext_resource type="FontFile" uid="uid://g7fwwun8fxf6" path="res://themes/headerText.tres" id="3_ll6ma"]
+[ext_resource type="StyleBox" uid="uid://cq7jdlfgh1l6i" path="res://themes/textRiddleBox.tres" id="4_ota70"]
+[ext_resource type="FontFile" uid="uid://bbv0uqau0dsyj" path="res://themes/buttonText.tres" id="5_u5ibh"]
+[ext_resource type="FontFile" uid="uid://cs8yy3afrdndi" path="res://themes/gameScoreText.tres" id="6_5osh0"]
+[ext_resource type="FontFile" uid="uid://xxm356lqwg34" path="res://themes/scoreText.tres" id="7_dgjvu"]
+
+[node name="Riddles" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_74cfk")
+
+[node name="bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_cxphp")
+
+[node name="header" type="Label" parent="bg"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_top = 6.0
+offset_right = 298.0
+offset_bottom = 74.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_ll6ma")
+theme_override_font_sizes/font_size = 45
+text = "WHAT'S            THE                    RIDDLE?"
+
+[node name="tips" type="Label" parent="bg"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -135.0
+offset_right = 110.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Tips: Answers must be one word, example. write \"bus\" instead of \"the bus\""
+autowrap_mode = 2
+
+[node name="level" type="Control" parent="bg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -261.0
+offset_right = 220.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="Panel" parent="bg/level"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_ota70")
+
+[node name="text" type="Label" parent="bg/level/bg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.5
+offset_top = -169.0
+offset_right = 172.5
+offset_bottom = 174.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "testingggg"
+autowrap_mode = 2
+
+[node name="answerEdit" type="TextEdit" parent="bg"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -329.0
+offset_right = 135.0
+offset_bottom = -287.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="check" type="Button" parent="bg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 252.0
+offset_right = 55.0
+offset_bottom = 291.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_u5ibh")
+theme_override_font_sizes/font_size = 24
+text = "Submit"
+
+[node name="quit" type="Button" parent="bg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = 321.0
+offset_right = 57.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_u5ibh")
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+
+[node name="scoreHeader" type="Label" parent="bg"]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 116.0
+offset_right = 318.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_5osh0")
+theme_override_font_sizes/font_size = 31
+text = "Current Score: "
+
+[node name="score" type="Label" parent="bg"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 116.0
+offset_right = 379.0
+offset_bottom = 158.0
+pivot_offset = Vector2(17, 21)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_dgjvu")
+theme_override_font_sizes/font_size = 31
+text = "0"
+
+[connection signal="pressed" from="bg/check" to="." method="_on_check_pressed"]
+[connection signal="pressed" from="bg/quit" to="." method="_on_quit_pressed"]

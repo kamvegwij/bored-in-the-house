@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbhauolsjx2pm"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_4yxgh"]
+[ext_resource type="FontFile" uid="uid://dxtw7so8sgoch" path="res://assets/font/gambatat/Gambatat.otf" id="2_domgu"]
+[ext_resource type="Texture2D" uid="uid://be0w1mpjj8ky1" path="res://assets/img/background.png" id="4_3thdk"]
+[ext_resource type="Theme" uid="uid://bw0kvycu53axm" path="res://themes/btnPlay.tres" id="4_7d5us"]
+[ext_resource type="Theme" uid="uid://b5j0pf7n8st0n" path="res://themes/btnQuit.tres" id="5_kdx8v"]
+[ext_resource type="StyleBox" uid="uid://dy5c8yy0q3u7q" path="res://themes/scoreTable.tres" id="6_q5o81"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4yxgh")
+
+[node name="header" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -71.0
+offset_top = 10.0
+offset_right = 68.0
+offset_bottom = 36.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_domgu")
+theme_override_font_sizes/font_size = 52
+text = "Main Menu"
+
+[node name="bg" type="TextureRect" parent="."]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_3thdk")
+
+[node name="play" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -396.0
+offset_top = 592.0
+offset_right = -304.0
+offset_bottom = 702.0
+grow_horizontal = 0
+theme = ExtResource("4_7d5us")
+text = "Play"
+
+[node name="quit" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -305.0
+offset_top = 681.0
+offset_right = -213.0
+offset_bottom = 791.0
+grow_horizontal = 0
+theme = ExtResource("5_kdx8v")
+text = "Quit"
+
+[node name="score_table" type="Panel" parent="."]
+offset_left = 66.0
+offset_top = 178.0
+offset_right = 453.0
+offset_bottom = 444.0
+theme_override_styles/panel = ExtResource("6_q5o81")
+
+[node name="head" type="Label" parent="score_table"]
+offset_left = 161.0
+offset_top = 3.0
+offset_right = 201.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Score Table"
+
+[node name="username" type="Label" parent="score_table"]
+offset_left = 23.0
+offset_top = 40.0
+offset_right = 112.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Score Table"
+
+[node name="score" type="Label" parent="score_table"]
+offset_left = 119.0
+offset_top = 40.0
+offset_right = 208.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Score Table"
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

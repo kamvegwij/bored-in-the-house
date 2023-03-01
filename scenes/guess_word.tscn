@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://cb7q63ku8qkfg"]
+
+[ext_resource type="Script" path="res://scripts/guess_word.gd" id="1_nt4g2"]
+[ext_resource type="Texture2D" uid="uid://dx6i20vo663c7" path="res://assets/img/logo.png" id="1_owkv0"]
+[ext_resource type="Texture2D" uid="uid://b7alcqawasrja" path="res://assets/img/guessTheWordPack/why.png" id="2_ik1a2"]
+[ext_resource type="Texture2D" uid="uid://dxw1rlc23deio" path="res://assets/img/guessTheWordPack/ear.jpeg" id="3_xtaxw"]
+
+[node name="guessWord" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nt4g2")
+
+[node name="bg" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="header" type="Label" parent="bg"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "WHAT'S THE WORD??"
+
+[node name="answerEdit" type="TextEdit" parent="bg"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -384.0
+offset_right = 136.0
+offset_bottom = -342.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="check" type="Button" parent="bg"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = 208.0
+offset_right = 21.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Submit"
+
+[node name="imagesTop" type="HBoxContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(50, 50)
+layout_direction = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -194.0
+offset_right = 275.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="img1" type="TextureRect" parent="imagesTop"]
+custom_minimum_size = Vector2(150, 150)
+texture = ExtResource("2_ik1a2")
+ignore_texture_size = true
+
+[node name="img2" type="TextureRect" parent="imagesTop"]
+custom_minimum_size = Vector2(150, 150)
+texture = ExtResource("3_xtaxw")
+ignore_texture_size = true
+
+[node name="imagesBottom" type="HBoxContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(50, 50)
+layout_direction = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -23.0
+offset_right = 275.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="img1" type="TextureRect" parent="imagesBottom"]
+custom_minimum_size = Vector2(150, 150)
+texture = ExtResource("1_owkv0")
+ignore_texture_size = true
+
+[node name="img2" type="TextureRect" parent="imagesBottom"]
+custom_minimum_size = Vector2(150, 150)
+texture = ExtResource("1_owkv0")
+ignore_texture_size = true
+
+[connection signal="pressed" from="bg/check" to="." method="_on_check_pressed"]

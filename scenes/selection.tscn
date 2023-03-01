@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2r7mbdrdlasr"]
+
+[ext_resource type="Script" path="res://scripts/selection.gd" id="1_qsvw1"]
+[ext_resource type="Texture2D" uid="uid://bpuealeidejhk" path="res://assets/img/riddlesBtn.png" id="2_763m5"]
+[ext_resource type="Texture2D" uid="uid://cwhh14oidt8oc" path="res://assets/img/GUESS.png" id="3_0g6rg"]
+[ext_resource type="Texture2D" uid="uid://be0w1mpjj8ky1" path="res://assets/img/background.png" id="3_dogj7"]
+[ext_resource type="FontFile" uid="uid://dxtw7so8sgoch" path="res://assets/font/gambatat/Gambatat.otf" id="5_otc8b"]
+
+[node name="Selection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qsvw1")
+
+[node name="riddlebtn" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -315.0
+offset_right = 22.0
+offset_bottom = -275.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_763m5")
+
+[node name="guessWord" type="TextureButton" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -180.0
+offset_right = 241.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_0g6rg")
+ignore_texture_size = true
+
+[node name="bg" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_dogj7")
+
+[node name="header" type="Label" parent="bg"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -241.0
+offset_top = 9.0
+offset_right = 241.0
+offset_bottom = 57.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_otc8b")
+theme_override_font_sizes/font_size = 36
+text = "Choose The Game You Want To Play"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 874.0
+offset_right = 469.0
+offset_bottom = 926.0
+text = "Currently only have riddles available, more games to be added soon!"
+autowrap_mode = 2
+
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = 189.0
+offset_right = 30.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_otc8b")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[connection signal="pressed" from="riddlebtn" to="." method="_on_riddlebtn_pressed"]
+[connection signal="pressed" from="guessWord" to="." method="_on_guess_word_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

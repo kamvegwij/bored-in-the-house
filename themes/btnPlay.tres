@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bw0kvycu53axm"]
+
+[ext_resource type="FontFile" uid="uid://dxtw7so8sgoch" path="res://assets/font/gambatat/Gambatat.otf" id="1_ad6q8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2eklm"]
+bg_color = Color(0.34902, 0.611765, 0.913725, 1)
+corner_radius_top_left = 65
+corner_radius_bottom_right = 65
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bvbwa"]
+bg_color = Color(0.141176, 0.0901961, 0.0156863, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.788235, 0.843137, 0.423529, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_bottom_right = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_minmb"]
+bg_color = Color(0.0666667, 0.0509804, 0.0156863, 1)
+corner_radius_top_left = 65
+corner_radius_bottom_right = 65
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aby13"]
+bg_color = Color(0.4, 0.337255, 0.184314, 1)
+corner_radius_top_left = 65
+corner_radius_bottom_right = 65
+
+[resource]
+default_font = ExtResource("1_ad6q8")
+default_font_size = 34
+Button/fonts/font = ExtResource("1_ad6q8")
+Button/styles/focus = SubResource("StyleBoxFlat_2eklm")
+Button/styles/hover = SubResource("StyleBoxFlat_bvbwa")
+Button/styles/normal = SubResource("StyleBoxFlat_minmb")
+Button/styles/pressed = SubResource("StyleBoxFlat_aby13")

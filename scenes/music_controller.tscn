@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://bulpwhpj86beh"]
+
+[ext_resource type="Script" path="res://scripts/music_controller.gd" id="1_iaqe3"]
+[ext_resource type="AudioStream" uid="uid://butjhy4wgw7k3" path="res://assets/audio/peaceful.wav" id="2_to3n4"]
+[ext_resource type="AudioStream" uid="uid://dc3g2hryrbclv" path="res://assets/audio/click_1.wav" id="3_gkhxg"]
+[ext_resource type="AudioStream" uid="uid://d15bjwawk3k3c" path="res://assets/audio/click_cartoony.wav" id="4_1gelp"]
+[ext_resource type="AudioStream" uid="uid://c8asg274xrcmi" path="res://assets/audio/wrong.mp3" id="5_piepq"]
+
+[node name="MusicController" type="Node"]
+script = ExtResource("1_iaqe3")
+
+[node name="background" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_to3n4")
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gkhxg")
+
+[node name="success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1gelp")
+volume_db = -21.048
+
+[node name="wrong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_piepq")
+volume_db = -17.333

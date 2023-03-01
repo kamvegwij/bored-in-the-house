@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://brddxa1cqby55"]
+
+[ext_resource type="Script" path="res://scripts/starting.gd" id="1_fqw76"]
+[ext_resource type="FontFile" uid="uid://dxtw7so8sgoch" path="res://assets/font/gambatat/Gambatat.otf" id="1_q2hhe"]
+[ext_resource type="Texture2D" uid="uid://be0w1mpjj8ky1" path="res://assets/img/background.png" id="2_gbrfn"]
+
+[node name="Starting" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_fqw76")
+
+[node name="bg" type="TextureRect" parent="."]
+show_behind_parent = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_gbrfn")
+
+[node name="text" type="Label" parent="."]
+offset_left = 119.0
+offset_top = 301.0
+offset_right = 448.0
+offset_bottom = 327.0
+text = "Hi there! Enter a username for this session.
+Submit when you're done"
+horizontal_alignment = 1
+
+[node name="username" type="TextEdit" parent="."]
+offset_left = 154.0
+offset_top = 505.0
+offset_right = 376.0
+offset_bottom = 550.0
+
+[node name="submit" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = 93.0
+offset_right = 36.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_q2hhe")
+theme_override_font_sizes/font_size = 24
+text = "Submit"
+
+[connection signal="pressed" from="submit" to="." method="_on_submit_pressed"]
