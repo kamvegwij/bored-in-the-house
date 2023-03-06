@@ -1,0 +1,130 @@
+[gd_scene load_steps=12 format=3 uid="uid://dqskyalehchw"]
+
+[ext_resource type="StyleBox" uid="uid://c1ufanobdy80" path="res://themes/gameBg.tres" id="1_78l6u"]
+[ext_resource type="Script" path="res://scripts/face_pick.gd" id="1_wlbg1"]
+[ext_resource type="FontFile" uid="uid://g7fwwun8fxf6" path="res://themes/headerText.tres" id="2_sy6t5"]
+[ext_resource type="Texture2D" uid="uid://lxers0i8icq3" path="res://assets/img/goofyface.webp" id="3_h4vss"]
+[ext_resource type="Texture2D" uid="uid://b52tmwblghkol" path="res://assets/img/black.png" id="4_jskeh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u54wq"]
+radius = 62.2896
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yi5hk"]
+radius = 63.7024
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_85hgr"]
+radius = 63.8201
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_okraj"]
+radius = 63.1269
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ej2ob"]
+radius = 62.2013
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p7w8s"]
+radius = 64.0703
+
+[node name="FacePicker" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wlbg1")
+
+[node name="bg" type="Panel" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_78l6u")
+
+[node name="header" type="Label" parent="bg"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -143.0
+offset_top = 12.0
+offset_right = 139.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_sy6t5")
+theme_override_font_sizes/font_size = 45
+text = "PICK            A           FACE"
+
+[node name="face" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 101.0
+offset_right = 342.0
+offset_bottom = 234.0
+texture = ExtResource("3_h4vss")
+expand_mode = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="spots" type="Node2D" parent="."]
+
+[node name="spot1" type="Area2D" parent="spots"]
+position = Vector2(104, 416)
+
+[node name="img" type="Sprite2D" parent="spots/spot1"]
+scale = Vector2(0.047984, 0.0456515)
+texture = ExtResource("4_jskeh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spots/spot1"]
+shape = SubResource("CircleShape2D_u54wq")
+
+[node name="spot2" type="Area2D" parent="spots"]
+position = Vector2(396, 419)
+
+[node name="img" type="Sprite2D" parent="spots/spot2"]
+scale = Vector2(0.047984, 0.0456515)
+texture = ExtResource("4_jskeh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spots/spot2"]
+shape = SubResource("CircleShape2D_yi5hk")
+
+[node name="spot3" type="Area2D" parent="spots"]
+position = Vector2(117, 612)
+
+[node name="img" type="Sprite2D" parent="spots/spot3"]
+scale = Vector2(0.047984, 0.0456515)
+texture = ExtResource("4_jskeh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spots/spot3"]
+shape = SubResource("CircleShape2D_85hgr")
+
+[node name="spot4" type="Area2D" parent="spots"]
+position = Vector2(390, 608)
+
+[node name="img" type="Sprite2D" parent="spots/spot4"]
+scale = Vector2(0.047984, 0.0456515)
+texture = ExtResource("4_jskeh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spots/spot4"]
+shape = SubResource("CircleShape2D_okraj")
+
+[node name="spot5" type="Area2D" parent="spots"]
+position = Vector2(125, 817)
+
+[node name="img" type="Sprite2D" parent="spots/spot5"]
+scale = Vector2(0.047984, 0.0456515)
+texture = ExtResource("4_jskeh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spots/spot5"]
+shape = SubResource("CircleShape2D_ej2ob")
+
+[node name="spot6" type="Area2D" parent="spots"]
+position = Vector2(388, 812)
+
+[node name="img" type="Sprite2D" parent="spots/spot6"]
+scale = Vector2(0.047984, 0.0456515)
+texture = ExtResource("4_jskeh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spots/spot6"]
+shape = SubResource("CircleShape2D_p7w8s")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

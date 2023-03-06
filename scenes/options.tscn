@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcxuet7yxjh2r"]
+
+[ext_resource type="Texture2D" uid="uid://dyp6o3gaphfbw" path="res://assets/img/studiologo.png" id="1_8hlml"]
+[ext_resource type="Script" path="res://scripts/options.gd" id="1_x4owj"]
+[ext_resource type="StyleBox" uid="uid://c1ufanobdy80" path="res://themes/gameBg.tres" id="2_ly4tf"]
+[ext_resource type="Theme" uid="uid://bw0kvycu53axm" path="res://themes/btnPlay.tres" id="4_qenej"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x4owj")
+
+[node name="Studiologo" type="Sprite2D" parent="."]
+position = Vector2(234, 700)
+texture = ExtResource("1_8hlml")
+
+[node name="bg" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_ly4tf")
+
+[node name="text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -325.0
+offset_right = 144.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hey my name is Kamvelihle Gwijana and I am currently turning this game idea into reality.
+
+\"Bored In The House\" is an android game that hosts a number of mini puzzle games. It is currently under developed as new mini games are being added and the game is being smoothed out.
+"
+autowrap_mode = 2
+
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -510.0
+offset_top = 2.0
+offset_right = -384.0
+offset_bottom = 61.0
+grow_horizontal = 0
+theme = ExtResource("4_qenej")
+text = "Menu"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

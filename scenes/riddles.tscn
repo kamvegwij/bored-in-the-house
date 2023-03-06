@@ -18,8 +18,7 @@ grow_vertical = 2
 script = ExtResource("1_74cfk")
 
 [node name="bg" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -27,8 +26,7 @@ grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_cxphp")
 
 [node name="header" type="Label" parent="bg"]
-layout_mode = 1
-anchors_preset = 5
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -240.0
@@ -41,8 +39,7 @@ theme_override_font_sizes/font_size = 45
 text = "WHAT'S            THE                    RIDDLE?"
 
 [node name="tips" type="Label" parent="bg"]
-layout_mode = 1
-anchors_preset = 7
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -71,8 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="bg" type="Panel" parent="bg/level"]
-layout_mode = 1
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 3.0
@@ -81,8 +77,7 @@ grow_vertical = 2
 theme_override_styles/panel = ExtResource("4_ota70")
 
 [node name="text" type="Label" parent="bg/level/bg"]
-layout_mode = 1
-anchors_preset = 8
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -98,8 +93,7 @@ text = "testingggg"
 autowrap_mode = 2
 
 [node name="answerEdit" type="TextEdit" parent="bg"]
-layout_mode = 1
-anchors_preset = 7
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -112,8 +106,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="check" type="Button" parent="bg"]
-layout_mode = 1
-anchors_preset = 8
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -129,8 +122,7 @@ theme_override_font_sizes/font_size = 24
 text = "Submit"
 
 [node name="quit" type="Button" parent="bg"]
-layout_mode = 1
-anchors_preset = 8
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

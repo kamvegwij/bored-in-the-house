@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb7q63ku8qkfg"]
+[gd_scene load_steps=4 format=3 uid="uid://cb7q63ku8qkfg"]
 
 [ext_resource type="Script" path="res://scripts/guess_word.gd" id="1_nt4g2"]
-[ext_resource type="Texture2D" uid="uid://dx6i20vo663c7" path="res://assets/img/logo.png" id="1_owkv0"]
-[ext_resource type="Texture2D" uid="uid://b7alcqawasrja" path="res://assets/img/guessTheWordPack/why.png" id="2_ik1a2"]
-[ext_resource type="Texture2D" uid="uid://dxw1rlc23deio" path="res://assets/img/guessTheWordPack/ear.jpeg" id="3_xtaxw"]
+[ext_resource type="StyleBox" uid="uid://c1ufanobdy80" path="res://themes/gameBg.tres" id="2_2l011"]
+[ext_resource type="FontFile" uid="uid://g7fwwun8fxf6" path="res://themes/headerText.tres" id="3_ynpni"]
 
 [node name="guessWord" type="Control"]
 layout_mode = 3
@@ -15,23 +14,30 @@ grow_vertical = 2
 script = ExtResource("1_nt4g2")
 
 [node name="bg" type="Panel" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_2l011")
 
 [node name="header" type="Label" parent="bg"]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+offset_left = -255.0
+offset_top = 12.0
+offset_right = 256.0
+offset_bottom = 80.0
 grow_horizontal = 2
-text = "WHAT'S THE WORD??"
+theme_override_fonts/font = ExtResource("3_ynpni")
+theme_override_font_sizes/font_size = 45
+text = "WHAT'S          THE             WORD??"
 
 [node name="answerEdit" type="TextEdit" parent="bg"]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -45,71 +51,46 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="check" type="Button" parent="bg"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 13.0
-offset_top = 208.0
-offset_right = 21.0
-offset_bottom = 216.0
+offset_left = -14.5
+offset_top = 196.5
+offset_right = 48.5
+offset_bottom = 227.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Submit"
 
-[node name="imagesTop" type="HBoxContainer" parent="."]
+[node name="imagesTop" type="HBoxContainer" parent="bg"]
 clip_contents = true
 custom_minimum_size = Vector2(50, 50)
 layout_direction = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -285.0
-offset_top = -194.0
-offset_right = 275.0
-offset_bottom = -144.0
+offset_left = -257.0
+offset_top = -244.0
+offset_right = 254.0
+offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="img1" type="TextureRect" parent="imagesTop"]
+[node name="img1" type="TextureRect" parent="bg/imagesTop"]
 custom_minimum_size = Vector2(150, 150)
-texture = ExtResource("2_ik1a2")
-ignore_texture_size = true
+layout_mode = 2
+expand_mode = 1
 
-[node name="img2" type="TextureRect" parent="imagesTop"]
+[node name="img2" type="TextureRect" parent="bg/imagesTop"]
 custom_minimum_size = Vector2(150, 150)
-texture = ExtResource("3_xtaxw")
-ignore_texture_size = true
-
-[node name="imagesBottom" type="HBoxContainer" parent="."]
-clip_contents = true
-custom_minimum_size = Vector2(50, 50)
-layout_direction = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -285.0
-offset_top = -23.0
-offset_right = 275.0
-offset_bottom = 27.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="img1" type="TextureRect" parent="imagesBottom"]
-custom_minimum_size = Vector2(150, 150)
-texture = ExtResource("1_owkv0")
-ignore_texture_size = true
-
-[node name="img2" type="TextureRect" parent="imagesBottom"]
-custom_minimum_size = Vector2(150, 150)
-texture = ExtResource("1_owkv0")
-ignore_texture_size = true
+layout_mode = 2
+expand_mode = 1
 
 [connection signal="pressed" from="bg/check" to="." method="_on_check_pressed"]

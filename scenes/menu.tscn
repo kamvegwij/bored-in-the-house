@@ -17,7 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_4yxgh")
 
 [node name="header" type="Label" parent="."]
-anchors_preset = 5
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -71.0
@@ -32,7 +32,7 @@ text = "Main Menu"
 
 [node name="bg" type="TextureRect" parent="."]
 show_behind_parent = true
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -41,7 +41,7 @@ mouse_filter = 2
 texture = ExtResource("4_3thdk")
 
 [node name="play" type="Button" parent="."]
-anchors_preset = 1
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -396.0
@@ -52,8 +52,8 @@ grow_horizontal = 0
 theme = ExtResource("4_7d5us")
 text = "Play"
 
-[node name="quit" type="Button" parent="."]
-anchors_preset = 1
+[node name="options" type="Button" parent="."]
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -305.0
@@ -62,9 +62,23 @@ offset_right = -213.0
 offset_bottom = 791.0
 grow_horizontal = 0
 theme = ExtResource("5_kdx8v")
+text = "About"
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -238.0
+offset_top = 773.0
+offset_right = -146.0
+offset_bottom = 883.0
+grow_horizontal = 0
+theme = ExtResource("5_kdx8v")
 text = "Quit"
 
 [node name="score_table" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 66.0
 offset_top = 178.0
 offset_right = 453.0
@@ -72,6 +86,7 @@ offset_bottom = 444.0
 theme_override_styles/panel = ExtResource("6_q5o81")
 
 [node name="head" type="Label" parent="score_table"]
+layout_mode = 0
 offset_left = 161.0
 offset_top = 3.0
 offset_right = 201.0
@@ -80,6 +95,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Score Table"
 
 [node name="username" type="Label" parent="score_table"]
+layout_mode = 0
 offset_left = 23.0
 offset_top = 40.0
 offset_right = 112.0
@@ -88,6 +104,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Score Table"
 
 [node name="score" type="Label" parent="score_table"]
+layout_mode = 0
 offset_left = 119.0
 offset_top = 40.0
 offset_right = 208.0
@@ -96,4 +113,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Score Table"
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
